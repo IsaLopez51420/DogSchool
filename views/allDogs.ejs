@@ -1,0 +1,43 @@
+<%- include('navbar') %>
+<div class="container-fluid alldogs">
+  <br />
+  <br />
+  <div class="row">
+    <div class="col recuadro">
+      <img class="huella" src="/images/huellablanca.png" alt="" />
+
+      <h2 class="title text-center mt-5">Nuestros amigos caninos</h2>
+    </div>
+  </div>
+    <div class="row">
+      <% result.forEach(dog => { %>
+
+      <div
+        class="col-lg-3 col-md-6 col-sm-12 d-flex justify-content-center my-5"
+      >
+        <div class="card" style="width: 18rem">
+          <br />
+          <h5 class="card-title text-center"><b> <%- dog.dog_name %></b></h5>
+          <img
+            src="/images/dogs/<%- dog.image %>"
+            class="dogimg card-img-top img-thumbnail"
+            alt="Eniun"
+          />
+          <div class="texto card-body">
+            <p class="card-text"><%- dog.dog_info %></p>
+            <div class="">
+              <a
+                href="/trainer/moreInfoTrainer/<%- dog.trainer_id %>"
+                class="btn btn-dark"
+                >Mi entrenador</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <% }) %>
+    </div>
+  </div>
+</div>
+<%- include('footer') %>

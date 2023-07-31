@@ -1,0 +1,39 @@
+<%- include('navbar') %>
+<div class="container-fluid home">
+  <div class="row">
+    <div class="col-12">
+      <br />
+      <h1>Bienvenido a DogSchool</h1>
+    </div>
+  </div>
+
+  <!-- section all trainers -->
+  <!-- <section class="row trainershome">
+    <h2>Nuestro equipo</h2>
+    <% result.forEach(trainer => { %>
+
+    <div class="col-lg-3 col-md-6 col-sm-12 d-flex justify-content-center my-5">
+      <div class="card" style="width: 18rem">
+        <img
+          src="/images/trainers/<%- trainer.photo %>"
+          class="card-img-top"
+          alt="..."
+          height="60%"
+          width="50%"
+        />
+        <div class="texto card-body m-0">
+          <h5 class="card-title text-center"><b> <%- trainer.name %></b></h5>
+          <p class="card-text"><%- trainer.description %></p>
+          <a
+            href="/trainer/moreInfoTrainer/<%- trainer.trainer_id %>"
+            class="btn btn-dark d-flex justify-content-center"
+            >Más info</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <% }) %>
+  </section> -->
+</div>
+<%- include('footer') %>

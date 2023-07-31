@@ -1,0 +1,38 @@
+<%- include('navbar') %>
+<div class="container-fluid portada2">
+  <br />
+  <br />
+  <div class="row">
+    <div class="col recuadro">
+      <img class="huella" src="/images/huellablanca.png" alt="" />
+
+      <h2 class="title text-center mt-5">Nuestros entrenadores</h2>
+    </div>
+  </div>
+  <div class="row">
+    <% result.forEach(trainer => { %>
+
+    <div class="col-lg-3 col-md-6 col-sm-12 d-flex justify-content-center my-5">
+      <div class="card" style="width: 18rem">
+        <img
+          src="/images/trainers/<%- trainer.photo %>"
+          class="card-img-top img-thumbnail"
+          alt="Eniun"
+        />
+        <div class="texto card-body">
+          <h5 class="card-title text-center"><b><%- trainer.name %></b></h5>
+          <p class="card-text"><%- trainer.description %></p>
+          <a
+            href="/trainer/moreInfoTrainer/<%- trainer.trainer_id %>"
+            class="btn btn-dark"
+            >Más info</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <% }) %>
+  </div>
+</div>
+
+<%- include('footer') %>

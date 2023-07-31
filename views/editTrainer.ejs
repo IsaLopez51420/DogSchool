@@ -1,0 +1,114 @@
+<%- include('navbar') %>
+<div class="container-fluid edit">
+<br>
+  <div class="row ">
+    <div class="col reg">
+      <h3 class="equipo text-center">Editar entrenador</h3>
+      </div>
+    </div>
+  <div class="row d-flex justify-content-center">
+    <div class="col-md-8 col-lg-6">
+    <br>
+      
+      <form
+        action="/trainer/editTrainer/<%- result[0].trainer_id %>"
+        method="post"
+        enctype="multipart/form-data"
+      >
+        <div class="form-group col-lg-12 col-md-12 col-sm-3" width="15%">
+          <label for="name" class="form-label mt-2 mb-0">Nombre</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            aria-describedby="name"
+            name="name"
+            value="<%- result[0].name %>"
+            required
+          />
+        </div>
+        <div class="form-group col-lg-12 col-md-12 col-sm-3">
+          <label for="last_name" class="form-label mt-2 mb-0">Apellidos</label>
+          <input
+            type="text"
+            class="form-control"
+            id="last_name"
+            aria-describedby="last_name"
+            name="last_name"
+            value="<%- result[0].last_name %>"
+            required
+          />
+        </div>
+        <div class="form-group col-lg-12 col-md-12 col-sm-3">
+          <label for="phone_number" class="phone_number mt-2 mb-0"
+            >Teléfono de contacto</label
+          >
+          <input
+            type="texto"
+            class="form-control"
+            id="phone_number"
+            aria-describedby="phone_number"
+            name="phone_number"
+            value="<%- result[0].phone_number %>"
+            required
+          />
+        </div>
+        <div class="form-group col-lg-12 col-md-12 col-sm-3">
+          <label for="exampleInputEmail1" class="form-label mt-2 mb-0"
+            >Email address</label
+          >
+          <input
+            type="email"
+            class="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+            name="email"
+            value="<%- result[0].email %>"
+            required
+          />
+
+        </div>
+        <div class="form-group col-lg-12">
+          <label for="exampleInputPassword1" class="form-label mt-2 mb-0"
+            >Introduce una contraseña</label
+          >
+          <input
+            type="password"
+            class="form-control"
+            id="exampleInputPassword1"
+            name="password"
+            
+          />
+        </div>
+        <div class="form-group col-lg-12">
+          <label for="exampleFormControlTextarea1" class="form-label mt-2 mb-0"
+            >Descripción</label
+          >
+          <input
+            class="form-control"
+            id="exampleFormControlTextarea1"
+            name="description"
+            rows="3"
+            minlength="10"
+            maxlength="255"
+            value="<%- result[0].description %>"
+          ></input>
+        </div>
+        <div class="form-group col-lg-12">
+          <label for="formFile" class="form-label mt-2 mb-0"
+            >Introduce una nueva imagen de perfil</label
+          >
+          <input class="form-control" type="file" id="formFile" name="img" />
+        </div>
+        <br>
+
+        <button type="submit" class="btn btn-primary mb-3">
+          Guardar datos
+        </button>
+      </form>
+      <br />
+    </div>
+  </div>
+</div>
+
+<%- include('footer') %>

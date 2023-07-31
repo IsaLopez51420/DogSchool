@@ -1,0 +1,54 @@
+<%- include('navbar') %>
+<div class="container-fluid registroperro ">
+  <div class="row d-flex justify-content-center">
+    <div class="col-sm-12 col-md-8 col-lg-6">
+      <h2 class="text-center m-5">Registra tu amigo canino</h2>
+      <form
+        action="/dog/editDog/<%- result[0].dog_id %>/<%- result[0].trainer_id %>"
+        method="post"
+        enctype="multipart/form-data"
+      >
+        <div class="form-group col-lg-12 col-md-12 col-sm-3" width="15%">
+          <label for="name" class="form-label">Nombre</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            aria-describedby="name"
+            name="dog_name"
+            required
+            value="<%- result[0].dog_name %>"
+          />
+        </div>
+        <div class="form-group ol-lg-12 col-md-12 col-sm-3">
+          <label for="exampleFormControlTextarea1" class="form-label"
+            >Descripción</label
+          >
+          <input
+            class="form-control"
+            id="exampleFormControlTextarea1"
+            name="dog_info"
+            required
+            value="<%- result[0].dog_info %>"
+            rows="3"
+            minlength="10"
+            maxlength="255"
+          ></input>
+        </div>
+        <div class="form-group col-lg-12 col-md-12 col-sm-3">
+          <label for="formFile" class="form-label"
+            >Introduce una imagen del perro</label
+          >
+          <input class="form-control" type="file" id="formFile" name="img" />
+        </div>
+        <br>
+        <button type="submit" class="btn btn-dark mb-3">
+          Guardar datos
+        </button>
+      </form>
+      <br />
+    </div>
+  </div>
+</div>
+
+<%- include('footer') %>

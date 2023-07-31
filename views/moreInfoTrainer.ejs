@@ -1,0 +1,75 @@
+<%- include('navbar') %>
+<div class="container-fluid moreInfo">
+  <br />
+  <div class="row">
+    <div class="col d-flex justify-content-center my-5">
+      <div class="card" style="width: 18rem">
+        <br />
+        <h5 class="card-title text-center">
+          <b> <%- resultTrainer[0].name %> <%- resultTrainer[0].last_name %></b>
+        </h5>
+        <img
+          src="/images/trainers/<%- resultTrainer[0].photo %>"
+          class="dogimg card-img-top img-thumbnail"
+          alt="Eniun"
+        />
+        <div class="texto card-body">
+          <p class="card-text">
+            <b> Teléfono: </b> <%- resultTrainer[0].phone_number %>
+          </p>
+          <p class="card-text"><b>email: </b> <%- resultTrainer[0].email %></p>
+          <p class="card-text">
+            <b>Descripción: </b> <%- resultTrainer[0].description %>
+          </p>
+        </div>
+        <div class="card-body">
+          <a
+            href="/trainer/editTrainer/<%- resultTrainer[0].trainer_id %>"
+            class="btn btn-dark d-flex justify-content-center"
+            >Editar</a
+          >
+          <br />
+
+          <a
+            href="/dog/registerDog/<%- resultTrainer[0].trainer_id %>"
+            class="btn btn-dark d-flex justify-content-center"
+            >Insertar nuevo amigo canino</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <% resultDog.forEach(dog => { %>
+    <div class="col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center my-5">
+      <div class="card" style="width: 18rem">
+        <br />
+        <h5 class="card-title text-center"><b> <%- dog.dog_name %></b></h5>
+        <img
+          src="/images/dogs/<%- dog.image %>"
+          class="dogimg card-img-top img-thumbnail"
+          alt="Eniun"
+        />
+        <div class="texto card-body">
+          <p class="card-text"><%- dog.dog_info %></p>
+
+          <div class="">
+            <a
+              href="/dog/editDog/<%- dog.dog_id %>"
+              class="btn btn-outline-secondary"
+              >Editar</a
+            >
+            <a
+              href="/dog/delete/<%- dog.dog_id %>/<%- dog.trainer_id %>"
+              class="btn btn-outline-danger m-3"
+              >Eliminar</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <%})%>
+  </div>
+</div>
+<%- include('footer') %>
